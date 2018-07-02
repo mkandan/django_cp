@@ -1,0 +1,20 @@
+{% if latest_question_list %}
+<!--if there are any questions-->
+  <ul>
+    {% for question in latest_question_list %}
+    <!--for any question...-->
+    <li>
+      <!-- <li><a href="{% url 'detail' question.id %}">{{question.question_text}}
+      </a></li> -->
+
+      <li><a href="{% url 'detail' question.id %}">{{question.question_text}}
+      </a></li>
+
+      <!--<li><a href="/polls/{{question.id}}/">{{question.question_text}}</a></li>-->
+      <!--show it as a unbulleted list and link to that particular question
+    {% endfor %}-->
+  </ul>
+  {% else %}
+    <!--otherwise no polls were available-->
+    <p>No polls are available.</p>
+  {% endif %}
